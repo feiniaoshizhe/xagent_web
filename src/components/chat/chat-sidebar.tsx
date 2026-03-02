@@ -271,37 +271,6 @@ export function ChatSidebar() {
           </div>
         </div>
       </div>
-
-      {/* <div className="p-5 border-t border-sidebar-border">
-        <div className="rounded-lg bg-linear-to-br from-purple-500/10 via-blue-500/10 to-pink-500/10 p-3.5 space-y-3">
-          <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <WandSparklesIcon className="size-4" />
-              <span className="text-sm font-semibold">Square UI</span>
-            </div>
-            <p className="text-xs text-muted-foreground leading-tight">
-              Collection of beautifully crafted open-source layouts UI built
-              with shadcn/ui.
-            </p>
-          </div>
-          <Button
-            size="sm"
-            className="relative w-fit h-[30px] px-3 overflow-hidden bg-white text-black hover:bg-white/90 shadow-[0px_1px_2px_0px_rgba(8,8,8,0.2),0px_4px_4px_0px_rgba(8,8,8,0.08),inset_0px_1px_1px_0px_rgba(255,255,255,0.2),inset_0px_6px_12px_0px_rgba(255,255,255,0.12)]"
-            asChild
-          >
-            <Link
-              href="https://square.lndev.me"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(205,175,250,1),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(129,169,248,1),transparent_50%),radial-gradient(ellipse_at_top_left,rgba(247,203,191,1),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(164,252,245,1),transparent_50%)]" />
-              <span className="relative z-10 font-medium text-xs">
-                square.lndev.me
-              </span>
-            </Link>
-          </Button>
-        </div>
-      </div> */}
     </div>
   );
 }
