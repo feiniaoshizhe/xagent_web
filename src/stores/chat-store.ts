@@ -6,7 +6,7 @@ interface ChatState {
   selectedChatId: string | null;
   selectChat: (chatId: string) => void;
   addMessage: (chatId: string, message: Omit<Message, "id" | "timestamp">) => void;
-  createNewChat: () => void;
+  createNewChat: () => string;
   archiveChat: (chatId: string) => void;
   unarchiveChat: (chatId: string) => void;
   deleteChat: (chatId: string) => void;
@@ -38,7 +38,8 @@ export const useChatStore = create<ChatState>((set) => ({
       ),
     })),
   
-  createNewChat: () =>
+  createNewChat: () => {
+    let newChatId = "";
     set((state) => {
       const newChat: Chat = {
         id: `chat-${Date.now()}`,
@@ -49,11 +50,14 @@ export const useChatStore = create<ChatState>((set) => ({
         updatedAt: new Date(),
         isArchived: false,
       };
+      newChatId = newChat.id;
       return {
         chats: [newChat, ...state.chats],
         selectedChatId: newChat.id,
       };
-    }),
+    });
+    return newChatId;
+  },
   
   archiveChat: (chatId) =>
     set((state) => ({

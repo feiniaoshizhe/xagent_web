@@ -6,15 +6,19 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production"
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/dashboard",
-        permanent: false,
-      },
-    ]
-  }
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: "/",
+  //       permanent: false,
+  //     },
+  //   ]
+  // },
+  ...(process.env.IS_NATIVE && {
+    output: "export",
+    images: { unoptimized: true },
+  })
 };
 
 export default nextConfig;
